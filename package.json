@@ -31,10 +31,7 @@
     "npmIgnore": [
       "documentjs"
     ],
-    "transpiler": "babel",
-    "directories": {
-      "lib": "index"
-    }
+    "transpiler": "babel"
   },
   "dependencies": {
     "accounting": "^0.4.1",
