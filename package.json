@@ -1,0 +1,55 @@
+{
+  "name": "accounting-helpers",
+  "version": "0.1.0",
+  "description": "Stache helpers for formatting money.",
+  "main": "src/accounting-helpers.js",
+  "scripts": {
+    "publish": "git push origin && git push origin --tags",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "jshint": "jshint src/accounting-helpers.js",
+    "testee": "testee tests/test.html --browsers firefox",
+    "test": "npm run jshint && npm run testee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://marshallswain@github.com/icanjs/accounting-helpers.git"
+  },
+  "keywords": [
+    "canjs",
+    "stache"
+  ],
+  "author": "Marshall Thompson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icanjs/accounting-helpers/issues"
+  },
+  "homepage": "https://github.com/icanjs/accounting-helpers",
+  "system": {
+    "main": "accounting-helpers",
+    "npmIgnore": [
+      "documentjs"
+    ],
+    "transpiler": "babel",
+    "directories": {
+      "lib": "index"
+    }
+  },
+  "dependencies": {
+    "accounting": "^0.4.1",
+    "can": "*",
+    "jquery": "2.1.4"
+  },
+  "devDependencies": {
+    "jshint": "^2.8.0",
+    "ramda": "^0.18.0",
+    "steal": "^0.12.3",
+    "steal-qunit": "^0.1.1",
+    "steal-tools": "^0.12.1",
+    "testee": "^0.2.2"
+  },
+  "jshintConfig": {
+    "esnext": true
+  }
+}
