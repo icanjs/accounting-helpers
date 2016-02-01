@@ -34,6 +34,29 @@ This will return 23.33 without live binding:
 {{formatCentsUnbound amount}}
 ```
 
+## Use individual helpers
+If you need to, you can import the helpers individually.
+
+```html
+<can-import from="accounting-helpers/format-money"/>
+{{formatMoney amount}}
+```
+
+```html
+<can-import from="accounting-helpers/format-money-unbound"/>
+{{formatMoneyUnbound amount}}
+```
+
+```html
+<can-import from="accounting-helpers/format-cents"/>
+{{formatCents amountInPennies}}
+```
+
+```html
+<can-import from="accounting-helpers/format-cents-unbound"/>
+{{formatCentsUnbound amountInPennies}}
+```
+
 ## Contributing
 Pull requests are welcome. Analyze the code. See where it needs improvement, and let me know. Please, help make it better!
 
