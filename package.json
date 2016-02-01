@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/icanjs/accounting-helpers",
   "system": {
-    "main": "accounting-helpers",
+    "main": "index",
     "npmIgnore": [
       "documentjs"
     ],
