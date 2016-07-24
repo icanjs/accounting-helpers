@@ -1,6 +1,6 @@
 {
   "name": "accounting-helpers",
-  "version": "0.1.4",
+  "version": "3.0.0",
   "description": "Stache helpers for formatting money.",
   "main": "src/accounting-helpers.js",
   "scripts": {
@@ -36,8 +36,7 @@
   },
   "dependencies": {
     "accounting": "^0.4.1",
-    "can": "*",
-    "jquery": "2.1.4"
+    "can-stache": "^3.0.0-pre.11"
   },
   "devDependencies": {
     "jshint": "^2.8.0",

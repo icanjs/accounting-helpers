@@ -1,5 +1,5 @@
-import can from 'can';
 import accounting from 'accounting';
+
 /**
  * Functions the same as formatMoney, but without live binding.
  * Can be used for a performance boost when live binding is not needed.
@@ -7,15 +7,15 @@ import accounting from 'accounting';
  * @param  {String} propName  The name of the property to be formatted.
  * @return {String} An accounting-formatted currencty amount.
  */
-can.stache.registerHelper('formatMoneyUnbound', function(propName, numberOfDecimals, nullval = undefined, options = {}) {
-	if (typeof numberOfDecimals !== 'number'){
-		numberOfDecimals = 2;
-	}
-	if (options.context[propName] === null && nullVal !== undefined) {
-		return '';
+export default function(propName, numberOfDecimals, nullval = undefined, options = {}) {
+ 	if (typeof numberOfDecimals !== 'number'){
+ 		numberOfDecimals = 2;
+ 	}
+ 	if (options.context[propName] === null && nullVal !== undefined) {
+ 		return '';
 
-  // Convert from dollars/cents into accounting float.
-	} else {
-		return accounting.formatMoney(options.context[propName], '', numberOfDecimals);
-	}
-});
+   // Convert from dollars/cents into accounting float.
+ 	} else {
+ 		return accounting.formatMoney(options.context[propName], '', numberOfDecimals);
+ 	}
+}

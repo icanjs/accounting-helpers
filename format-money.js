@@ -1,4 +1,3 @@
-import can from 'can';
 import accounting from 'accounting';
 
 /**
@@ -12,20 +11,20 @@ import accounting from 'accounting';
  *                   If not provided, 0.00 will be returned.
  * @return {String} An accounting-formatted currency amount.
  */
-can.stache.registerHelper('formatMoney', function(prop, numberOfDecimals = 2, nullVal = undefined) {
-	prop = typeof prop === 'function' ? prop() : prop;
-	numberOfDecimals = typeof numberOfDecimals === 'function' ? numberOfDecimals() : numberOfDecimals;
+export default function(prop, numberOfDecimals = 2, nullVal = undefined) {
+ 	prop = typeof prop === 'function' ? prop() : prop;
+ 	numberOfDecimals = typeof numberOfDecimals === 'function' ? numberOfDecimals() : numberOfDecimals;
 
-	if (typeof numberOfDecimals !== 'number'){
-		numberOfDecimals = 2;
-	}
+ 	if (typeof numberOfDecimals !== 'number'){
+ 		numberOfDecimals = 2;
+ 	}
 
-	// There was no value, return the nullVal
-	if (prop === null && nullVal !== undefined) {
-		return nullVal;
+ 	// There was no value, return the nullVal
+ 	if (prop === null && nullVal !== undefined) {
+ 		return nullVal;
 
-	// Convert from cents into accounting float.
-	} else {
-	  return accounting.formatMoney(prop, '', numberOfDecimals);
-	}
-});
+ 	// Convert from cents into accounting float.
+ 	} else {
+ 	  return accounting.formatMoney(prop, '', numberOfDecimals);
+ 	}
+}

@@ -34,31 +34,37 @@ This will return 23.33 without live binding:
 {{formatCentsUnbound amount}}
 ```
 
-## Use individual helpers
+## Use individual helpers in can-component
 If you need to, you can import the helpers individually.
 
-```html
-<can-import from="accounting-helpers/format-money"/>
-{{formatMoney amount}}
-```
+```js
+import Component from 'can-component';
+import formatMoney from "accounting-helpers/format-money";
+import formatMoneyUnbound from "accounting-helpers/format-money-unbound";
+import formatCents from "accounting-helpers/format-cents";
+import formatCentsUnbound from "accounting-helpers/format-cents-unbound";
 
-```html
-<can-import from="accounting-helpers/format-money-unbound"/>
-{{formatMoneyUnbound amount}}
-```
-
-```html
-<can-import from="accounting-helpers/format-cents"/>
-{{formatCents amountInPennies}}
-```
-
-```html
-<can-import from="accounting-helpers/format-cents-unbound"/>
-{{formatCentsUnbound amountInPennies}}
+Component.extend({
+  tag: "hello-world",
+  template: stache("{{formatMoney amount}}"),
+  viewModel: {
+    amount: 300,
+  },
+  helpers: {
+    formatMoney,
+    formatMoneyUnbound,
+    formatCents,
+    formatCentsUnbound
+  }
+});
 ```
 
 ## Contributing
 Pull requests are welcome. Analyze the code. See where it needs improvement, and let me know. Please, help make it better!
+
+## Changelog
+ - `3.0.0` - CanJS 3.0 compatibility.
+ - `1.0.0` - CanJS 2.3 compatibility.
 
 ## Authors
 
